@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Message Wall</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript" src="js/comms.js" defer></script>
+        <script type="text/javascript" src="js/login.js" defer></script>
+        
+        <script type="text/javascript" src="js/appindexhtml.js" defer></script>
+    </head>
+    <body>
+
+        <div>
+            
+<!--            A listener to this form is added in the login.js file as:
+            
+                let submitForm = document.getElementById("loginform");
+                submitForm.onsubmit = async (e) => { 
+                                                     //code
+                                                   }-->            
+            <form id="loginform">
+                Message Wall
+                <br>
+                nick : <input type="text" id="idnick" name="login" size=10 required>
+                <br>
+                password : <input type="password" id="idpassword" name="password" size=10 required>
+                <br>
+                
+                <input type="submit" value="login">
+            </form>
+
+        </div>
+    </body>
+</html>

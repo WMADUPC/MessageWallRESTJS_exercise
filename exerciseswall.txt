@@ -1,0 +1,359 @@
+
+wmad MessageWall_exercise
+
+/****************************************************************
+*****************************************************************
+
+FOLLOW INSTRUCTIONS IN THIS FILE CAREFULLY
+
+*****************************************************************
+****************************************************************/
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+                    WARNING!!!!!!!!
+
+
+BEFORE ATTEMPTING ANY OF THE BELOW INSTRUCTIONS MAKE SURE YOU
+KNOW HOW TO PROPERLY SET UP AND RUN the upperCase example
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+===================================================================
+USE NETBEANS 8.1 (NETBEANS 8.2 AND ABOVE HAVE A JAVASCRIPT BUG)
+===================================================================
+
+-----------------------------------------------------------------
+
+MessageWall_exercise WEB is an exercise to learn the REST paradigm,
+and a front end written in JAVASCRIPT.
+
+The applicacion is the same as the Message Wall you already 
+implemented as a classic web applicacion. Now we include 
+persistence using REST.
+
+----------------------------------------------------------------
+
+
+
+=================================================================
+
+To set up the application
+
+=================================================================
+
+BEFORE STARTING IMPORTANT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+a) USE NETBEANS 8.1
+
+b) IN CHROME INSTALL THE NETBEANS CONNECTOR
+
+
+
+
+/****************************************************************
+*****************************************************************
+
+SET UP STEPS
+
+*****************************************************************
+****************************************************************/
+
+
+================================================================
+SERVER AND JAVASCRIPT CLIENT
+================================================================
+
+1) Unzip the file MessageWallTESTJS_exercise.rar
+
+2) Import the data base
+
+
+    a) Open the MySQL Workbench
+    
+    b) In MANAGEMENT Go to DataImport/Restore:
+
+              - Check Import from Self-Contained file
+
+              - Use the ... buttons to browse to the
+                folder MessageWallTESTJS_exercise.
+
+              - Choose the "wallmessage" file of type SQL 
+                Text File
+              - Press Start Import  bottom right corner
+
+              - Right click in schemas then Refresh All 
+                and check there is a schema "wallmessage" with
+                tables "message", "publicuser" and "user".
+
+3) Go to Netbeans and Open Project MessageWallTESTJS_exercise
+
+4) If there are errors in the WEb Pages -> WEB-INF -> js folder:
+
+   a) open the files where there are errors
+   b) press Alt-Enter on the error and click the first option
+      ``Filter out JS parsing ... ''
+   c) To make the error go away completely sometimes is 
+      necessary to make a small change and save the file, so
+      type a blank space at the END of any line and save.
+
+5) If an small yellow triangle appears in the blue globe symbol.
+
+    a) Right click the project name
+    
+    b) and Go to  Resolve Data Source Problems
+    
+    c) In the box that appears click the button Add Connection ...
+    
+    d) as you can see it uses our ecomm user,
+     the password I use is ecomm,
+      (If you have another password put it here)
+    
+    e) Very Important!!!! Check Remember Password
+
+    f) and Test Connection
+    
+    g) Hopefully you will get Connection Succeeded!! :)
+
+    h) Click Next, then Next, then Finish
+
+
+6) Run the MessageWallTESTJS_exercise project
+
+7) In Chrome go to More Tools -> Developer Tools
+    The Developer Tools will appear at your browsers
+    right hand side.
+
+8) There are two already registered users
+
+          nick: Cervantes   password: 1234
+          nick: Shakespeare  password: 1234
+          
+9) Enter one of the users and the password:
+
+         Shakespeare for instance
+
+10) You will see ERRORS in the Console at the bottom 
+    of the Developer Tools.
+
+
+8) THE ERRORS HAPPEN becayse you need to change the port in 
+   the JAVASCRIPT code of the application to the Glassfish 
+   server port.
+
+   - Go to Netbeans
+   - In the MessageWallTESTJS_exercise project
+     Go to folder Web Pages -> folder js -> open file comms.js
+
+   - In the function initGlobal in 
+   
+          module.homePage
+          
+     change the port number 32185 to your server port number.
+     
+     ------------------------------------------------------------------
+     
+     To see the port number:
+        - right click the project upperCaseRESTJSWebSocket and go to
+          Properties -> Run and see Server. Remember the name.
+        - Close the window.
+        - Then Go to Services -> Servers.
+        - Right click on the server and go to Properties
+        - The HTTP Port is the port number.
+
+    ------------------------------------------------------------------
+
+
+9) Save the file and run the project again.
+
+10) You can now login with a user (Cervantes or Shakespeare)
+    
+    You will see application traces in the Developer Tools console.
+
+
+=======================================================================
+
+11) Then complete the following exercises !!!
+
+=======================================================================
+
+
+
+
+/****************************************************************
+*****************************************************************
+
+SET UP STEPS
+
+*****************************************************************
+****************************************************************/
+
+
+
+1) Read a basic tutorial about JAVASCRIPT for instance
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/
+A_re-introduction_to_JavaScript
+
+
+and VERY IMPORTANT!!
+
+UNDERSTAND the code in the code in the js folder of the
+upperCase example!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+You can also ask the Professor!!!!!!!!!!!!!!!!   :)
+
+2) To understand the upperCase exercises and more particular aspects
+of JAVASCRIPT  you can check  the excellent 
+
+https://javascript.info/
+
+
+==========================================================================
+
+FIRST EXERCISE:
+
+
+In retrievemessages.js
+
+// sets the user nick in the <em id="userNick"></em> in wall.html file
+function setNick(nick){
+    // Complete:
+    // 
+    // Get a reference to the DOM object in the appwall.html file
+    
+    // change the html of the object
+
+}
+
+Complete the setNumberOfMessages function in file retrievemessages.js
+
+// sets the user nick in the <em id="numberMessages"></em> in 
+//  wall.html file
+function setNumberOfMessages(nm){
+    // Complete:
+    // 
+    // Get a reference to the DOM object in the appwall.html file
+    
+    // change the html of the object
+
+}
+
+
+
+==========================================================================
+
+SECOND EXERCISE:
+
+
+In submitMessage.js
+
+
+//
+//  *************** Part 1 *********************************
+// 
+// use fetch with method POST to get the Publicuser object
+// and store the result in a variable called
+// publicUserFromServer
+// 
+// Complete:
+//
+// fetch
+//
+// let publicUserFromServer = body from the reply in JSON
+//
+
+
+
+
+//
+//  *************** Part 2 *********************************
+//         
+// Populate the message object with the user input from 
+// the submitForm FormData and store in an object called data
+//
+// Complete!!
+//
+
+
+//
+//  *************** Part 3 *********************************
+//         
+// Use the function fetch to POST the message
+// 
+// Complete !!!!!!
+//
+
+//
+//  *************** Part 4 *********************************
+// 
+// Complete !!!!!!
+//        
+// Empty the 
+// <input type="text" id="idcontent" name="content" size=10 required>
+
+
+
+
+==========================================================================
+
+THIRD EXERCISE
+
+In deletemessages.js
+
+//
+// **************   Part 1 ********************************
+//
+// Make the GET fetch call as usual to messageAddr
+// and store the result in a variable called message
+//
+// 
+// Complete:
+//
+// fetch
+//
+//
+// let message = body from the reply in JSON
+//
+
+// ************************** Part 2 ************************************
+//     
+// if the nick stored in global is the nick of the
+// message owner make a fetch DELETE call to messageAddr
+//
+// Complete :
+//
+    if(/* Complete */){
+        // Deleting a message is done through the rest call
+        // 'http://localhost:32185/MessageWallRESTJS/entity.message/"{id}"';
+        // to execute in the server the method
+        /*     @DELETE
+                @Path("{id}")
+                public void remove(@PathParam("id") Integer id) {
+                    super.remove(super.find(id));
+                }
+        */
+
+// fetch DELETE call!        
+
+        //  Since the body to the repley of a DELETE fetch is empty
+        //    await response.json();
+        //    FAILS!!!!!
+        let responseBody = await response.text();
+        
+        console.log("deleteMessage -> calling retrieveMessages ");
+        // Call retreiveMessages to update the table
+        retrieveMessages();
+    }else{
+        alert(global.nick + ", you are not the owner of the message");
+    }
+    
+    
+==========================================================================    
